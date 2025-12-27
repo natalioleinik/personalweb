@@ -18,17 +18,15 @@ export function Nav() {
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-auto max-w-6xl px-6 pt-5">
         <div className="flex items-center justify-between rounded-full bg-white/80 backdrop-blur px-5 py-3 shadow-[0_18px_60px_rgba(0,0,0,.10)] ring-1 ring-black/[0.06]">
-          
+
           {/* Home */}
-          <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black/[0.05] transition hover:bg-black/[0.08]">
+          <Link href="/" className="flex items-center">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black/[0.05] transition hover:bg-black/[0.08]">
               <Home className="h-4 w-4 text-black" />
-            </span>
-            <span className="text-sm font-medium tracking-tight text-black">
             </span>
           </Link>
 
-          {/* Nav items */}
+          {/* Nav items + Resume */}
           <nav className="flex items-center gap-1">
             {items.map((it) => {
               const active = pathname === it.href;
@@ -59,6 +57,16 @@ export function Nav() {
                 </Link>
               );
             })}
+
+            {/* Resume button */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 rounded-full bg-[var(--pinky)] px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+            >
+              Resume
+            </a>
           </nav>
         </div>
       </div>
